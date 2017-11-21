@@ -1,0 +1,68 @@
+<h1>Hot Weather Widget</h1>
+<div class="element">
+    <div class="element-left">
+        <div class="element-bg-img">
+            <img src="images/1.jpg" alt="" class="img-responsive"></div>
+        <div class="element-left-bottom">
+            <div class="ele-strip">
+                <ul class="filterList">
+                    <li (click)=setFilter(filterTypes.all)>
+                        <span>All</span>
+                    </li>
+                    <li (click)=setFilter(filterTypes.fishing)>
+                        <span>Fishing</span>
+                    </li>
+                    <li (click)=setFilter(filterTypes.tour)>
+                        <span>Tours</span>
+                    </li>
+                    <li (click)=setFilter(filterTypes.weather) class="anc-bor">
+                        <span>Weather</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="village">
+                <h3>Righteous indignation & like</h3>
+                <span class="line"> </span>
+                <div class="activity_box">
+
+                    <div 
+                        class="scrollbar" 
+                        id="style-2" 
+                        *ngIf="(places$ | async) as places; else loadGif">
+
+                        <course-place-list 
+                            *ngFor="let place of places | placeFilter: filterText" [item]="place"
+                            (click)=selectPlace(place)>
+                        </course-place-list>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="element-right">
+
+        <course-weather [data]="currentPlace?.weather">
+        </course-weather>
+
+        <course-social [data]="currentPlace?.social_info">
+        </course-social>
+
+    </div>
+    <div class="clear"></div>
+</div>
+
+
+<div class="copy-right">
+    <p>© 2015 Hot Weather Widget. All rights reserved | Design by <a href="http://w3layouts.com/" target="_blank">
+        W3layouts </a></p>
+</div>
+
+
+
+<ng-template #loadGif>
+    <div style="display:block; width: 100%; text-align: center; padding: 10px 0"> 
+        <img src="images/ui_loading.gif" alt="">
+    </div>
+</ng-template>
