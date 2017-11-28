@@ -1,8 +1,8 @@
-.activity-row{
+.activity-row {
     cursor: pointer;
     padding: 3px;
 }
 
-.activity-row:hover{
+.activity-row:hover {
     background: lightgrey;
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { places$ } from './data';
 import { Observable } from 'rxjs/Observable';
+import { PlacesService } from './common/services/places.service';
 
 @Component({
     selector: 'app-root',
@@ -10,28 +10,28 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent implements OnInit {
 
     public places$: Observable<Place[]>;
-    public currentPlace: Place;
-    
+
     public filterTypes: FilterType = {
         all: 'all',
-        fishing :'fishing',
-        tour :'tour',
+        fishing: 'fishing',
+        tour: 'tour',
         weather: 'weather'
-    }
-    
+    };
+
     private filterText: string = 'all';
 
-    public ngOnInit():void{
-        this.places$ = places$;
+    public constructor(private _placesService: PlacesService) {}
+
+    public ngOnInit(): void {
+        this.places$ = this._placesService.places$;
     }
 
-    public selectPlace(place: Place):void{
-        this.currentPlace = place;
+    public selectPlace(place: Place): void {
+        this._placesService.selectedPlace$.next(place);
     }
 
-    public setFilter(type: string): void{
-        this.filterText= type;
-        console.info('Filter:', this.filterText);
+    public setFilter(type: string): void {
+        this.filterText = type;
     }
 
 }

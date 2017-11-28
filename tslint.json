@@ -97,15 +97,6 @@
     ],
     "triple-equals": [
       true
-    ],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type",
-      "check-module"
     ]
   },
   "rules": {
@@ -155,7 +146,6 @@
         "variable-declaration": "nospace"
       }
     ],
-
     "class-name": true,
     "no-console": [
       true,
@@ -167,15 +157,15 @@
       "trace"
     ],
     "no-debugger": true,
-     "no-arg": true,
-     "no-invalid-this": true,
-     "no-shadowed-variable": true,
-     "no-var-keyword": true,
-     "use-isnan": true,
-     "cyclomatic-complexity": [
-       true,
-       20
-     ],
+    "no-arg": true,
+    "no-invalid-this": true,
+    "no-shadowed-variable": true,
+    "no-var-keyword": true,
+    "use-isnan": true,
+    "cyclomatic-complexity": [
+      true,
+      20
+    ],
     "max-classes-per-file": [
       true,
       1
@@ -207,9 +197,9 @@
       true,
       "always-prefix"
     ],
-     "no-angle-bracket-type-assertion": true,
-     "object-literal-shorthand": true,
-     "one-variable-per-declaration": [
+    "no-angle-bracket-type-assertion": true,
+    "object-literal-shorthand": true,
+    "one-variable-per-declaration": [
       true
     ],
     "variable-name": [
@@ -253,15 +243,6 @@
     ],
     "triple-equals": [
       true
-    ],
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type",
-      "check-module"
     ],
     "ordered-imports": [
       true,

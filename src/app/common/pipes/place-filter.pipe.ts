@@ -1,20 +1,20 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'placeFilter'
+    name: 'placeFilter'
 })
 export class PlaceFilterPipe implements PipeTransform {
 
-  public transform(places: Place[], placeType: string): Place[] {
-    if(!placeType){
-      return places;
-    }
+    public transform(places: Place[], placeType: string): Place[] {
+        if (!placeType) {
+            return places;
+        }
 
-    if(placeType === 'all'){
-      return places;
-    }
+        if (placeType === 'all') {
+            return places;
+        }
 
-    return places.filter((place: Place) =>`${place.type}`.includes(placeType));
-  }
+        return places.filter((place: Place) => `${place.type}`.includes(placeType));
+    }
 
 }
